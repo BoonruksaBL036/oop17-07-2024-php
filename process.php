@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $state = $_POST['state'];
     $postalCode = $_POST['postalCode'];
 
-    $address = new Address( $street, $city, $state, $postalCode);
+    $address = new Address($street, $city, $state, $postalCode);
     $person = new Person($name, $age, $address);
 
     $person->saveToDatabase($conn);
@@ -22,4 +22,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-?>
